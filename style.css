@@ -48,3 +48,115 @@ button {
     border: none;
     outline: none;
 }
+
+/* ------------------------------------------------------------  Header  ----------------------------------------------------------------------------------------- */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(248, 250, 252, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(15, 42, 68, 0.05);
+    z-index: 1000;
+}
+
+.header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+/* Logo */
+.header__logo-img {
+    height: 45px;
+    width: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* Navigation Links */
+.header__nav-list {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+}
+
+.header__nav-link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0.5rem 0;
+    color: var(--primary-color);
+}
+
+/* Premium Hover Underline Effect */
+.header__nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.header__nav-link:hover::after,
+.header__nav-link.active::after {
+    width: 100%;
+}
+
+/* Actions Area */
+.header__actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Call Button - Circle */
+.header__call-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.25);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.header__call-btn:hover {
+    background-color: var(--accent-hover);
+    transform: scale(1.05);
+}
+
+/* Infinite Wobble Animation */
+@keyframes ringWobble {
+    0%, 100% { transform: rotate(0deg); }
+    15% { transform: rotate(-15deg); }
+    30% { transform: rotate(15deg); }
+    45% { transform: rotate(-15deg); }
+    60% { transform: rotate(15deg); }
+    75% { transform: rotate(0deg); }
+}
+.header__call-btn i {
+    animation: ringWobble 2s infinite ease-in-out;
+    transform-origin: center;
+    display: inline-block;
+    font-style: normal;
+    font-size: 1.2rem;
+}
+.header__menu-btn {
+    display: none;
+    background: transparent;
+    color: var(--primary-color);
+    padding: 0;
+}

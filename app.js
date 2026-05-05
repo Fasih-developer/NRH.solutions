@@ -159,6 +159,72 @@ function services_slider(){
         "-=0.3"
     );
 }
+function choose_Us(){
+    // --- WHY CHOOSE US SCROLL & COUNTING ANIMATION ---
+    const chooseTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".choose-us",
+            start: "top 80%", 
+            toggleActions: "play none none none"
+        },
+        defaults: { ease: "power2.out" }
+    });
+
+    // 1. Fade in heading
+    chooseTl.from(".choose-us__heading", {
+        autoAlpha: 0,
+        y: 20,
+        duration: 0.6
+    })
+    // 2. Fade in paragraph
+    .from(".choose-us__text", {
+        autoAlpha: 0,
+        y: 20,
+        duration: 0.6
+    }, "-=0.3")
+    // 3. Fade in stat cards
+    .from(".choose-us__stat-card", {
+        autoAlpha: 0,
+        y: 20,
+        duration: 0.5,
+        stagger: 0.1,
+        clearProps: "all"
+    }, "-=0.2");
+
+    // 4. Trigger the Number Counter Animations
+    const counters = document.querySelectorAll(".counter");
+    
+    counters.forEach(counter => {
+        const target = parseFloat(counter.getAttribute("data-target"));
+        // Check if this specific counter needs decimal formatting (for the 4.9)
+        const isDecimal = counter.hasAttribute("data-decimals"); 
+        
+        // Create a dummy object to animate the value
+        let countObj = { val: 0 };
+
+        // Attach this to the timeline so it fires smoothly after the cards fade in
+        chooseTl.to(countObj, {
+            val: target,
+            duration: 2, 
+            ease: "power2.out",
+            onUpdate: function() {
+                // If it's a decimal, fix to 1 place, otherwise round to whole integer
+                counter.innerHTML = isDecimal ? countObj.val.toFixed(1) : Math.floor(countObj.val);
+            }
+        }, "-=0.5"); // Starts slightly before the fade-in finishes
+    });
+}
+function footer(){
+    const scrollTopBtn = document.querySelector('.footer__scroll-top');
+    if (scrollTopBtn) {
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+}
 
 loaded();
 navbar();
@@ -166,3 +232,5 @@ hero();
 about();
 values();
 services_slider();
+choose_Us();
+footer();

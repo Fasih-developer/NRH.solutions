@@ -157,3 +157,66 @@
     .services__btn-container {
         margin-top: 3rem;
     }
+/* -------------------------------------------------- choose us ----------------------------------------------- */
+    .choose-us {
+        padding: 4rem 0;
+    }
+
+    .choose-us__heading {
+        font-size: 2.2rem;
+    }
+
+    .choose-us__text {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    .choose-us__header {
+        margin-bottom: 3rem;
+    }
+
+    /* Convert 4 columns to 2 columns for tablet/mobile */
+    .choose-us__stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .choose-us__stat-number {
+        font-size: 2.5rem; /* Scale down numbers to fit mobile screens */
+    }
+
+    .choose-us__stat-label {
+        font-size: 0.95rem;
+    }
+
+/* --------------------------------------------------- FOOTER ---------------------------------------- */
+    .footer {
+        padding-top: 4rem;
+    }
+
+    .footer__top {
+        grid-template-columns: 1fr; /* Stack all columns */
+        gap: 2.5rem;
+        padding-bottom: 3rem;
+        text-align: center; /* Center everything on mobile */
+    }
+
+    .footer__logo {
+        margin: 0 auto;
+    }
+
+    /* Center the orange underlines */
+    .footer__heading::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer__bottom-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .footer__scroll-top {
+        position: static; /* Removes absolute positioning so it stacks nicely at bottom */
+        margin-top: 10px;
+    }

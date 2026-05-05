@@ -220,3 +220,91 @@
         position: static; /* Removes absolute positioning so it stacks nicely at bottom */
         margin-top: 10px;
     }
+
+/* ---------------------------------------------- services page -------------------------------------------------------- */
+
+    .services-pg-grid__wrapper {
+        grid-template-columns: 1fr; /* 1 card per row */
+        gap: 2rem;
+    }
+
+    .services-pg-header {
+        padding: 8rem 1rem 3rem 1rem;
+    }
+
+    .services-pg-header__title {
+        font-size: 2.2rem;
+    }
+
+    .modal__content {
+        width: 90%;
+        padding: 2rem 1.5rem;
+    }
+
+    .modal__form {
+        grid-template-columns: 1fr; /* Stack form inputs on mobile */
+    }
+
+    .form-group--full {
+        grid-column: span 1;
+    }
+
+
+/* ------------------------------------- privacy policy ------------------------------------------------------------- */
+    .legal-header {
+        padding: 8rem 1rem 3rem 1rem;
+    }
+
+    .legal-header__title {
+        font-size: 2.2rem;
+    }
+
+    .legal-content__container {
+        padding: 2rem 1.5rem;
+        border-radius: 8px;
+    }
+
+    .legal-section h3 {
+        font-size: 1.2rem;
+    }
+
+    .legal-section p, 
+    .legal-section ul li {
+        font-size: 0.95rem;
+    }
+
+    .legal-section--highlight {
+        padding: 1.5rem;
+    }
+/* ---------------------------------------- Contact Form --------------------------------------------------- */
+
+    .contact-pg-header {
+        padding: 8rem 1rem 3rem 1rem;
+    }
+
+    .contact-pg-header__title {
+        font-size: 2.2rem;
+    }
+
+    .contact-pg-form__wrapper {
+        padding: 2rem 1.5rem;
+    }
+
+    /* Stack grid rows on mobile */
+    .contact-form__row {
+        grid-template-columns: 1fr;
+        gap: 0; 
+    }
+
+    .contact-form__label-wrapper {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact-form__char-count {
+        align-self: flex-end;
+    }
+
+    .contact-form__submit-btn {
+        width: 100%; 
+    }

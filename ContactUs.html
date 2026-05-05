@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="NRH SOLUTIONS - A modern, premium social media marketing and advertising agency.">
+    <meta name="keywords" content="social media marketing, advertising agency, NRH Solutions, digital marketing, SEO">
+    <title>NRH SOLUTIONS |  Marketing & Advertising</title>
+    <link rel="shortcut icon" href="./Media/logo.webp" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-mob.css" media="screen and (max-width: 768px)">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container header__container">
+            
+            <!-- 1. Logo -->
+            <a href="./index.html" class="header__logo-link" aria-label="NRH Solutions Home">
+                <img src="./Media/logo.webp" alt="NRH Solutions Logo" class="header__logo-img">
+            </a>
+            <nav class="header__nav" aria-label="Main Navigation">
+                <ul class="header__nav-list">
+                    <li><a href="./index.html" class="header__nav-link">HOME</a></li>
+                    <li><a href="./Services.html" class="header__nav-link">SERVICES</a></li>
+                    <li><a href="./AboutUs.html" class="header__nav-link">ABOUT US</a></li>
+                    <li><a href="./ContactUs.html" class="header__nav-link">CONTACT US</a></li>
+                </ul>
+            </nav>
+
+            <div class="header__actions">
+                <a href="tel:#" class="header__call-btn" aria-label="Call Us Now">
+                    <i class="ri-phone-fill"></i>
+                </a>
+                <button class="header__menu-btn" aria-label="Open Mobile Menu" aria-expanded="false"><i class="ri-menu-4-line"></i></button>
+            </div>
+
+        </div>
+    </header>
+
+
+
+    <!-- Main Content Container --->
+   <main  class="main-content">
+    <!-- Contact Page Header -->
+    <section class="contact-pg-header">
+        <div class="container text-center">
+            <h1 class="contact-pg-header__title">CONTACT <span class="highlight">US</span></h1>
+            <div class="contact-pg-header__line"></div>
+            <p class="contact-pg-header__text">
+                Reach out to our team of experts. We are here to help you elevate your brand.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-pg-form-section">
+        <div class="container">
+            <div class="contact-pg-form__wrapper">
+                
+                <form class="contact-form" id="mainContactForm">
+                    <!-- Row 1: Name -->
+                    <div class="contact-form__row">
+                        <div class="contact-form__group">
+                            <label class="contact-form__label">First Name <span class="required">*</span></label>
+                            <input type="text" class="contact-form__input" required>
+                        </div>
+                        <div class="contact-form__group">
+                            <label class="contact-form__label">Last Name <span class="required">*</span></label>
+                            <input type="text" class="contact-form__input" required>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Contact Info -->
+                    <div class="contact-form__row">
+                        <div class="contact-form__group">
+                            <label class="contact-form__label">Email Address <span class="required">*</span></label>
+                            <input type="email" class="contact-form__input" required>
+                        </div>
+                        <div class="contact-form__group">
+                            <label class="contact-form__label">Phone <span class="required">*</span></label>
+                            <input type="tel" class="contact-form__input" required>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Address 1 -->
+                    <div class="contact-form__group">
+                        <label class="contact-form__label">Street Address</label>
+                        <input type="text" class="contact-form__input">
+                    </div>
+
+                    <!-- Row 4: Address 2 -->
+                    <div class="contact-form__group">
+                        <label class="contact-form__label">Apartment, suite, etc</label>
+                        <input type="text" class="contact-form__input">
+                    </div>
+
+                    <!-- Row 5: City & State -->
+                    <div class="contact-form__row">
+                        <div class="contact-form__group">
+                            <label class="contact-form__label">City</label>
+                            <input type="text" class="contact-form__input">
+                        </div>
+                        <div class="contact-form__group">
+                            <label class="contact-form__label">State/Province</label>
+                            <input type="text" class="contact-form__input">
+                        </div>
+                    </div>
+
+                    <!-- Row 6: Zip & Country -->
+                    <div class="contact-form__row">
+                        <div class="contact-form__group">
+                            <label class="contact-form__label">ZIP / Postal Code</label>
+                            <input type="text" class="contact-form__input">
+                        </div>
+                        <div class="contact-form__group">
+                            <label class="contact-form__label">Country</label>
+                            <select class="contact-form__select">
+                                <option value="" disabled selected>Select country</option>
+                                <option value="US">United States</option>
+                                <option value="UK">United Kingdom</option>
+                                <option value="PK">Pakistan</option>
+                                <option value="AE">United Arab Emirates</option>
+                                <!-- Add more options as needed -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Row 7: Textarea -->
+                    <div class="contact-form__group">
+                        <div class="contact-form__label-wrapper">
+                            <label class="contact-form__label">How can we help you? Please provide a brief description of your job or question.</label>
+                            <span class="contact-form__char-count" id="charCount">0 / 180</span>
+                        </div>
+                        <textarea class="contact-form__textarea" id="contactMessage" maxlength="180" rows="5"></textarea>
+                    </div>
+
+                    <!-- Row 8: Checkbox Consent -->
+                    <div class="contact-form__consent">
+                        <input type="checkbox" id="smsConsent" class="contact-form__checkbox">
+                        <label for="smsConsent" class="contact-form__consent-label">
+                            *By checking this box, you agree to receive SMS text messages from NRH Solutions at the Phone number provided. Consent is not a condition of purchase. You may opt out anytime by replying STOP. Msg & data rates may apply. View <a href="PAGE LINK HERE" class="contact-form__link">privacy policy</a>.
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="contact-form__submit-wrapper">
+                        <button type="submit" class="btn contact-form__submit-btn">Submit</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </section>
+   </main>
+
+    <!-- ------------------------------------- Footer --------------------------------------->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__top">
+                                <div class="footer__col footer__col--logo">
+                    <img src="./Media/logoF.png" alt="NRH Solutions Logo" class="footer__logo">
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__heading">USEFUL LINKS</h4>
+                    <ul class="footer__list">
+                        <li><a href="./AboutUs.html">About</a></li>
+                        <li><a href="./Services.html">Services</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Other Links -->
+                <div class="footer__col">
+                    <h4 class="footer__heading">OTHER LINKS</h4>
+                    <ul class="footer__list">
+                        <li><a href="./privacy.html">Privacy Policy</a></li>
+                        <li><a href="facebook.com">Facebook</a></li>
+                        <li><a href="instagram.com">Instagram</a></li>
+                    </ul>
+                </div>
+                <!--  Contact Information -->
+                <div class="footer__col footer__col--contact">
+                    <h4 class="footer__heading">CONTACT US</h4>
+                    <div class="footer__contact-info">
+                        <p class="footer__contact-text">xxxxxxxxxxxxxx</p>
+                        <p class="footer__contact-text">mail@gmail.com</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Bar -->
+        <div class="footer__bottom">
+            <div class="container footer__bottom-container">
+                <p class="footer__copyright">&copy; 2026 NRH Solutions. All rights reserved.</p>
+                                <button class="footer__scroll-top" aria-label="Scroll to top">
+                    <i class="ri-arrow-up-s-line footer__scroll-icon"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

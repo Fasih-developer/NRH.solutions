@@ -276,7 +276,10 @@ button {
     padding: 5rem 0 5rem 0;
     background-color: var(--bg-color);
 }
-
+.about_space{
+    /* background-color: rebeccapurple; */
+    height: 50px;
+}
 .about__wrapper {
     display: flex;
     align-items: center;
@@ -725,4 +728,433 @@ button {
     background-color: var(--accent-color);
     border-color: var(--accent-color);
     transform: translateY(-3px);
+}
+
+
+
+/* ----------------------------------------------------------- Services Page ------------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------------  main page ----------------------------------------------------------- */
+.text-center { text-align: center; }
+
+.services-pg-header {
+    padding: 10rem 0 4rem 0; 
+    background-color: var(--bg-color);
+}
+
+.services-pg-header__title {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.services-pg-header__line {
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 0 auto 1.5rem auto;
+    border-radius: 2px;
+}
+
+.services-pg-header__text {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    opacity: 0.8;
+}
+
+.services-pg-grid {
+    background-color: var(--bg-color);
+    padding-bottom: 6rem;
+}
+
+.services-pg-grid__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+    gap: 2.5rem;
+}
+
+/* Inverted Colors Card */
+.services-pg__card {
+    background-color: var(--primary-color); /* Dark background */
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 15px 35px rgba(15, 42, 68, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.services-pg__card:hover {
+    transform: translateY(-8px);
+}
+
+.services-pg__icon {
+    font-size: 3.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1.5rem;
+}
+
+.services-pg__title {
+    color: #ffffff;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.services-pg__text {
+    color: var(--bg-color); /* Light text */
+    opacity: 0.85;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex-grow: 1; /* Pushes button to bottom evenly */
+}
+
+.services-pg__btn {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.8rem 1.5rem;
+}
+/* -------------------------------------------------------- form pop up ----------------------------------------------------- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden; /* Hidden by default, GSAP will show it */
+    opacity: 0;
+}
+
+.modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 42, 68, 0.8); /* Dark blur */
+    backdrop-filter: blur(5px);
+}
+
+.modal__content {
+    background-color: var(--bg-color);
+    width: 100%;
+    max-width: 600px;
+    padding: 3rem;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2001;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.modal__close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal__close:hover {
+    color: var(--accent-color);
+}
+
+.modal__title {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.modal__subtitle {
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    opacity: 0.8;
+    margin-bottom: 2rem;
+}
+
+.modal__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group--full {
+    grid-column: span 2;
+}
+
+.modal__form input,
+.modal__form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid rgba(15, 42, 68, 0.15);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background-color: #ffffff;
+    transition: border-color 0.3s ease;
+}
+
+.modal__form input:focus,
+.modal__form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.modal__submit {
+    width: 100%;
+    padding: 1.2rem;
+}
+
+/* --------------------------------------------- Privacy Policy ---------------------------------------------------- */
+
+.legal-header {
+    padding: 10rem 0 4rem 0; 
+    background-color: var(--bg-color);
+}
+
+.legal-header__title {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.legal-header__line {
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 0 auto 1.5rem auto;
+    border-radius: 2px;
+}
+
+.legal-header__text {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    opacity: 0.8;
+}
+
+/* Content Container */
+.legal-content {
+    background-color: var(--bg-color);
+    padding-bottom: 6rem;
+}
+
+.legal-content__container {
+    max-width: 900px; /* Kept narrow for optimal reading length */
+    background-color: #ffffff;
+    padding: 4rem;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(15, 42, 68, 0.05);
+}
+
+.legal-section {
+    margin-bottom: 2.5rem;
+}
+
+.legal-section:last-child {
+    margin-bottom: 0;
+}
+
+.legal-section h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.legal-section p {
+    font-size: 1rem;
+    color: var(--primary-color);
+    opacity: 0.85;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.legal-section ul {
+    list-style-type: disc;
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.legal-section ul li {
+    font-size: 1rem;
+    color: var(--primary-color);
+    opacity: 0.85;
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+.legal-section strong {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+.legal-section--highlight {
+    background-color: rgba(15, 42, 68, 0.03);
+    padding: 2rem;
+    border-left: 4px solid var(--accent-color);
+    border-radius: 0 8px 8px 0;
+}
+
+
+/* ------------------------------------------------------------ Contact Form ------------------------------------------------- */
+.contact-pg-header {
+    padding: 10rem 0 4rem 0; 
+    background-color: var(--bg-color);
+}
+
+.contact-pg-header__title {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.contact-pg-header__line {
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 0 auto 1.5rem auto;
+    border-radius: 2px;
+}
+
+.contact-pg-header__text {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    opacity: 0.8;
+}
+
+/* Form Section */
+.contact-pg-form-section {
+    background-color: var(--bg-color);
+    padding-bottom: 6rem;
+}
+
+.contact-pg-form__wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 4rem;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(15, 42, 68, 0.05);
+}
+
+.contact-form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.contact-form__group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form__label-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.contact-form__label {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.required {
+    color: #dc2626; 
+    font-weight: bold;
+}
+
+.contact-form__char-count {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    opacity: 0.7;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form__input,
+.contact-form__select,
+.contact-form__textarea {
+    width: 100%;
+    padding: 0.9rem;
+    background-color: #f1f5f9;
+    border: 1px solid rgba(15, 42, 68, 0.2);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--primary-color);
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-form__input:focus,
+.contact-form__select:focus,
+.contact-form__textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background-color: #ffffff;
+}
+
+/* Consent Checkbox Area */
+.contact-form__consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 2.5rem;
+}
+
+.contact-form__checkbox {
+    margin-top: 5px; 
+    width: 16px;
+    height: 16px;
+    accent-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.contact-form__consent-label {
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.contact-form__link {
+    color: var(--primary-color);
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* Submit Button */
+.contact-form__submit-wrapper {
+    text-align: center; 
+}
+
+.contact-form__submit-btn {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 1rem 3.5rem;
+    border-radius: 4px;
+}
+
+.contact-form__submit-btn:hover {
+    background-color: #0b1f33;
+    transform: translateY(-2px);
 }

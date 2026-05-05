@@ -225,7 +225,124 @@ function footer(){
         });
     }
 }
+function services_page(){
+    // --- SERVICES PAGE: OVERLAPPING POP-UP ANIMATION ---
+    const srvPgTl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
+    srvPgTl.from(".services-pg-header__title, .services-pg-header__line, .services-pg-header__text", {
+        autoAlpha: 0,
+        y: 30,
+        duration: 0.8,
+        stagger: 0.2
+    })
+    // Cards popping up sequentially, overlapping by 0.15s
+    .from(".services-pg__card", {
+        autoAlpha: 0,
+        scale: 0.8, // Start slightly smaller
+        y: 50,      // Start slightly lower
+        duration: 0.6,
+        stagger: 0.15, // This makes the next one start while current is mid-animation
+        ease: "back.out(1.5)", // Gives it a slight "bounce" effect at the end
+        clearProps: "all"
+    }, "-=0.2");
+
+
+    // --- MODAL LOGIC ---
+    const modal = document.getElementById("quoteModal");
+    const quoteBtns = document.querySelectorAll(".quote-btn");
+    const closeBtn = document.querySelector(".modal__close");
+    const modalOverlay = document.querySelector(".modal__overlay");
+
+    if (modal) {
+        // Open modal
+        quoteBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                gsap.to(modal, { autoAlpha: 1, duration: 0.3 });
+                // Small slide down animation for the form box
+                gsap.fromTo(".modal__content", { y: -30 }, { y: 0, duration: 0.4, ease: "power2.out" });
+            });
+        });
+
+        // Close modal function
+        const closeModal = () => {
+            gsap.to(modal, { autoAlpha: 0, duration: 0.3 });
+        };
+
+        // Close on X button click
+        if (closeBtn) closeBtn.addEventListener("click", closeModal);
+        
+        // Close on clicking outside the form (on the dark overlay)
+        if (modalOverlay) modalOverlay.addEventListener("click", closeModal);
+    }
+}
+function privacy_policy(){
+    const legalHeader = document.querySelector('.legal-header');
+    
+    if (legalHeader) {
+        const legalTl = gsap.timeline({ defaults: { ease: "power2.out" } });
+
+        // Animate Header
+        legalTl.from(".legal-header__title, .legal-header__line, .legal-header__text", {
+            autoAlpha: 0,
+            y: 20,
+            duration: 0.6,
+            stagger: 0.15
+        });
+
+        // Animate Content Box
+        legalTl.from(".legal-content__container", {
+            autoAlpha: 0,
+            y: 30,
+            duration: 0.8
+        }, "-=0.2");
+
+        // Animate individual sections on scroll
+        gsap.utils.toArray(".legal-section").forEach(section => {
+            gsap.from(section, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 85%",
+                    toggleActions: "play none none none"
+                },
+                autoAlpha: 0,
+                y: 15,
+                duration: 0.5,
+                ease: "power2.out"
+            });
+        });
+    }
+}
+function Contact_Us(){
+    const contactHeader = document.querySelector('.contact-pg-header');
+    
+    if (contactHeader) {
+        // 1. GSAP Load Animations
+        const contactTl = gsap.timeline({ defaults: { ease: "power2.out" } });
+
+        contactTl.from(".contact-pg-header__title, .contact-pg-header__line, .contact-pg-header__text", {
+            autoAlpha: 0,
+            y: 20,
+            duration: 0.6,
+            stagger: 0.15
+        })
+        .from(".contact-pg-form__wrapper", {
+            autoAlpha: 0,
+            y: 30,
+            duration: 0.8
+        }, "-=0.2");
+
+        // 2. Character Counter Logic
+        const messageInput = document.getElementById("contactMessage");
+        const charCountDisplay = document.getElementById("charCount");
+
+        if (messageInput && charCountDisplay) {
+            messageInput.addEventListener("input", () => {
+                const currentLength = messageInput.value.length;
+                charCountDisplay.textContent = `${currentLength} / 180`;
+            });
+        }
+    }
+}
 loaded();
 navbar();
 hero();
@@ -234,3 +351,6 @@ values();
 services_slider();
 choose_Us();
 footer();
+services_page();
+privacy_policy();
+Contact_Us();

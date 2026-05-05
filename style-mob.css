@@ -128,3 +128,32 @@
     .values__icon {
         font-size: 1.8rem;
     }
+
+/* --------------------------------------------services-slider------------------------------------------------- */
+    .services {
+        padding: 4rem 0;
+    }
+
+    .services__header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+        padding: 0 10px;
+    }
+
+    .services__heading {
+        font-size: 1.8rem;
+    }
+
+    /* Make edges fade quicker on smaller screens */
+    .services__slider-wrapper {
+        -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    }
+
+    .services__card {
+        width: 260px; /* Slightly smaller cards for mobile */
+    }
+
+    .services__btn-container {
+        margin-top: 3rem;
+    }

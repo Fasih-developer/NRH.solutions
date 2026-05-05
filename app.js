@@ -127,11 +127,42 @@ function values(){
         y: 40,
         duration: 0.7,
         stagger: 0.2, // 0.2 seconds between each card appearing
-        ease: "power2.out"
+        ease: "power2.out",
+        clearProps: "all"
     });
 }
+function services_slider(){
+// --- EXCLUSIVE SERVICES SCROLL ANIMATION ---
+    const servicesTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".services",
+            start: "top 75%", 
+            toggleActions: "play none none none"
+        },
+        defaults: { ease: "power2.out" }
+    });
+
+    servicesTl.from(".services__subtitle, .services__heading, .services__description", {
+        autoAlpha: 0,
+        y: 20,
+        duration: 0.6,
+        stagger: 0.2
+    })
+    .from(".services__slider-wrapper", {
+        autoAlpha: 0,
+        duration: 0.8
+    }, "-=0.2")
+    // Force the button to be visible using fromTo
+    .fromTo(".services__btn", 
+        { autoAlpha: 0, y: 15 }, 
+        { autoAlpha: 1, y: 0, duration: 0.5 }, 
+        "-=0.3"
+    );
+}
+
 loaded();
 navbar();
 hero();
 about();
 values();
+services_slider();

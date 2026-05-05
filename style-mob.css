@@ -39,7 +39,6 @@
     border-bottom: 1px solid rgba(15, 42, 68, 0.03);
 }
 
-/* Remove desktop hover line */
 .header__nav-link::after {
     display: none; 
 }
@@ -47,4 +46,34 @@
 .header__nav-link:active {
     color: var(--accent-color);
     background-color: rgba(245, 158, 11, 0.05);
+}
+
+
+/* ------------------------------------------------------ hero section ----------------------------------------------------------- */
+.hero__content {
+    padding: 0 15px;
+}
+
+.hero__heading {
+    font-size: 2.8rem; 
+    flex-direction: column;
+    gap: 0;
+   margin-bottom: 1.5rem;
+    }
+
+.hero__heading-dynamic-wrapper {
+    width: 220px; 
+    text-align: center; 
+}
+
+.hero__heading-dynamic {
+    border-right-width: 3px; 
+}
+.hero__subheading {
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+    }
+
+.hero__subheading br {
+    display: none;
 }

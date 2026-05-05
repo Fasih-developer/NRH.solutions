@@ -60,8 +60,30 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 }
 
-
+function hero(){
+    const heroTl = gsap.timeline({ defaults: { ease: "power2.out" }});
+    heroTl.fromTo(".hero__video", 
+        { autoAlpha: 0 }, 
+        { autoAlpha: 0.5, duration: 1.5 } 
+    )
+    .from(".hero__heading", {
+        autoAlpha: 0,
+        y: 20,
+        duration: 0.8
+    }, "-=0.5") 
+    .from(".hero__subheading", {
+        autoAlpha: 0,
+        y: 15,
+        duration: 0.8
+    }, "-=0.4")
+    .from(".hero__btn", {
+        autoAlpha: 0, 
+        y: 10,
+        duration: 0.6
+    }, "-=0.4");
+}
 
 
 loaded();
 navbar();
+hero();

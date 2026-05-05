@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }
 });
 }
-
 function hero(){
     const heroTl = gsap.timeline({ defaults: { ease: "power2.out" }});
     heroTl.fromTo(".hero__video", 
@@ -82,8 +81,57 @@ function hero(){
         duration: 0.6
     }, "-=0.4");
 }
+function about(){
+    const aboutTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: ".about",
+            start: "top 75%", // Starts when the top of the section hits 75% down the screen
+            toggleActions: "play none none none" // Plays once
+        },
+        defaults: { ease: "power2.out" }
+    });
 
-
+    // 1. Heading fades in
+    aboutTl.from(".about__heading", {
+        autoAlpha: 0,
+        y: 30,
+        duration: 0.6
+    })
+    // 2. Text fades in
+    .from(".about__text", {
+        autoAlpha: 0,
+        y: 30,
+        duration: 0.6
+    }, "-=0.3") // Overlaps slightly with previous animation
+    // 3. Image fades in
+    .from(".about__image", {
+        autoAlpha: 0,
+        x: 30, // Slides slightly from the right
+        duration: 0.8
+    }, "-=0.3")
+    // 4. Button fades in
+    .from(".about__btn", {
+        autoAlpha: 0,
+        y: 20,
+        duration: 0.5
+    }, "-=0.4");
+}
+function values(){
+    gsap.from(".values__card", {
+        scrollTrigger: {
+            trigger: ".values",
+            start: "top 80%", // Triggers slightly earlier so it animates as they scroll
+            toggleActions: "play none none none"
+        },
+        autoAlpha: 0,
+        y: 40,
+        duration: 0.7,
+        stagger: 0.2, // 0.2 seconds between each card appearing
+        ease: "power2.out"
+    });
+}
 loaded();
 navbar();
 hero();
+about();
+values();

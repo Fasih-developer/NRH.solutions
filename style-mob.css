@@ -5,7 +5,7 @@
 
 /* Resize Logo for mobile */
 .header__logo-img {
-    height: 35px;
+    height: 55px;
 }
 
 /* Show Hamburger Menu */
@@ -63,7 +63,7 @@
 
 .hero__heading-dynamic-wrapper {
     width: 220px; 
-    text-align: center; 
+    text-align: left; 
 }
 
 .hero__heading-dynamic {
@@ -77,3 +77,54 @@
 .hero__subheading br {
     display: none;
 }
+
+/* -------------------------------aobut us --------------------------------------------- */
+    .about {
+        padding: 4rem 0;
+        min-height: auto;
+    }
+
+    .about__wrapper {
+        flex-direction: column;
+        text-align: center; 
+        gap: 2.5rem;
+    }
+
+    .about__heading {
+        font-size: 2.2rem;
+    }
+
+    .about__text {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        padding: 0 10px;
+    }
+
+    .about__image-wrapper {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+/* -----------------------------------------------------values---------------------------------------------- */
+    .values {
+        padding: 4rem 0;
+    }
+
+    .values__container {
+        grid-template-columns: 1fr;
+        gap: 2rem; 
+        padding: 0 10px;
+    }
+
+    .values__card {
+        padding: 2.5rem 1.5rem; 
+    }
+
+    .values__icon-wrapper {
+        width: 75px;
+        height: 75px;
+    }
+
+    .values__icon {
+        font-size: 1.8rem;
+    }

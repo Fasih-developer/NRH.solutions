@@ -206,9 +206,11 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: left;
     gap: 20px;
 }
 .hero__heading-static {
+    text-align: left;
     color: #ffffff;
 }
 .hero__heading-dynamic-wrapper {

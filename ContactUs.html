@@ -59,16 +59,17 @@
         <div class="container">
             <div class="contact-pg-form__wrapper">
                 
-                <form class="contact-form" id="mainContactForm">
+                <form class="contact-form" id="mainContactForm"  action="https://api.web3forms.com/submit" method="POST">
+                 <input type="hidden" name="access_key" value="ee7ebd27-cd8f-43b6-b4b1-74b61fe94ddf">
                     <!-- Row 1: Name -->
                     <div class="contact-form__row">
                         <div class="contact-form__group">
                             <label class="contact-form__label">First Name <span class="required">*</span></label>
-                            <input type="text" class="contact-form__input" required>
+                            <input type="text" name="First_Name" class="contact-form__input" required>
                         </div>
                         <div class="contact-form__group">
                             <label class="contact-form__label">Last Name <span class="required">*</span></label>
-                            <input type="text" class="contact-form__input" required>
+                            <input type="text" name="last_Name"  class="contact-form__input" required>
                         </div>
                     </div>
 
@@ -76,7 +77,7 @@
                     <div class="contact-form__row">
                         <div class="contact-form__group">
                             <label class="contact-form__label">Email Address <span class="required">*</span></label>
-                            <input type="email" class="contact-form__input" required>
+                            <input type="email" name="email"  class="contact-form__input" required>
                         </div>
                         <div class="contact-form__group">
                             <label class="contact-form__label">Phone <span class="required">*</span></label>
@@ -87,24 +88,18 @@
                     <!-- Row 3: Address 1 -->
                     <div class="contact-form__group">
                         <label class="contact-form__label">Street Address</label>
-                        <input type="text" class="contact-form__input">
-                    </div>
-
-                    <!-- Row 4: Address 2 -->
-                    <div class="contact-form__group">
-                        <label class="contact-form__label">Apartment, suite, etc</label>
-                        <input type="text" class="contact-form__input">
+                        <input type="text" name="address"  class="contact-form__input">
                     </div>
 
                     <!-- Row 5: City & State -->
                     <div class="contact-form__row">
                         <div class="contact-form__group">
                             <label class="contact-form__label">City</label>
-                            <input type="text" class="contact-form__input">
+                            <input type="text" name="City_Name" class="contact-form__input">
                         </div>
                         <div class="contact-form__group">
                             <label class="contact-form__label">State/Province</label>
-                            <input type="text" class="contact-form__input">
+                            <input type="text" name="State_Name"  class="contact-form__input">
                         </div>
                     </div>
 
@@ -112,7 +107,7 @@
                     <div class="contact-form__row">
                         <div class="contact-form__group">
                             <label class="contact-form__label">ZIP / Postal Code</label>
-                            <input type="text" class="contact-form__input">
+                            <input type="text" name="Postal_code"  class="contact-form__input">
                         </div>
                         <div class="contact-form__group">
                             <label class="contact-form__label">Country</label>
@@ -133,7 +128,7 @@
                             <label class="contact-form__label">How can we help you? Please provide a brief description of your job or question.</label>
                             <span class="contact-form__char-count" id="charCount">0 / 180</span>
                         </div>
-                        <textarea class="contact-form__textarea" id="contactMessage" maxlength="180" rows="5"></textarea>
+                        <textarea class="contact-form__textarea"name="Message"  id="contactMessage" maxlength="180" rows="5"></textarea>
                     </div>
 
                     <!-- Row 8: Checkbox Consent -->
@@ -184,7 +179,8 @@
                     <h4 class="footer__heading">CONTACT US</h4>
                     <div class="footer__contact-info">
                         <p class="footer__contact-text">xxxxxxxxxxxxxx</p>
-                        <p class="footer__contact-text">mail@gmail.com</p>
+                        <a href="mailto:nrhsolutionsllcusa@gmail.com" class="footer__contact-text footer__contact-link">nrhsolutionsllcusa@gmail.com</a>
+                        <p class="footer__contact-text">5900 BALCONES DRIVE STE 27324 AUSTIN TX, USA 78731</p>
                     </div>
                 </div>
 
